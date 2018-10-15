@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% extends "CWcore/base.html" %}
+{% load static %}
+{% block css %}{% static 'CWcore/css/home.css' %}{% endblock %}
+	{% block nav %}
+	<nav class="pure-menu-active">
+		<ul class="pure-u-1 pure-menu-horizontal pure-menu-scrollable">
+			<li class="pure-menu-item"><h1 class="pure-menu-heading">Communication With HEARTs</h1></li>
+			<li class="pure-menu-item"><a href="{% url 'CWcore:home' %}" class="pure-menu-link">主页</a></li>
+			<li class="pure-menu-item"><a href="#" class="pure-menu-link">有声Blog</a></li>
+			<li class="pure-menu-item"><a href="#" class="pure-menu-link">Vlog</a></li>
+			<li class="pure-menu-item"><a href="#" class="pure-menu-link">阅读分享</a></li>
+			<li class="pure-menu-item"><a href="#" class="pure-menu-link">交流空间</a></li>
+			<li class="pure-menu-item"><a href="{% url 'CWcore:about' %}" class="pure-menu-link">关于CommunicationsWE</a></li>
+			<li class="pure-menu-item">
+				<form class="pure-form">
+					<input type="text" class="pure-input-rounded pure-u-1">
+					<button type="submit" class="pure-button">搜索</button>
+				</form>
+			</li>
+		</ul>
+	</nav>
+	{% endblock %}
+	{% block 主体 %}
+	<div class="pure-menu custom-restricted-width pure-u-1-5  side-menu">
+		<span class="pure-menu-heading">Yahoo Sites</span>
+			<ul class="pure-menu-list pure-g-1-5">
+				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Flickr</a></li>
+				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Messenger</a></li>
+				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Sports</a></li>
+				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Finance</a></li>
+				<li class="pure-menu-heading">More Sites</li>
+				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Games</a></li>
+				<li class="pure-menu-item"><a href="#" class="pure-menu-link">News</a></li>
+				<li class="pure-menu-item"><a href="#" class="pure-menu-link">OMG!</a></li>
+			</ul>
+	</div>
+	<main background="static/images/home_bg.jpg" class="pure-u-1-2 text_center">
+		<div class="contents pure-menu-list">
+			{% for every_article in article %}
+				<table class="pure-table">
+					<h3>{{ every_article.title }}</h3>
+					<h6>作者：{{ every_article.author }}</h6>
+					<p>{{ every_article.contents | safe }}</p>
+				</table>
+			{% endfor %}
+		</div>
+	</main>
+	<footer class="text-center">
+		<div>
+		  <div class="row">
+			<div class="col-12">
+			  <p>Copyright © Heroku. All rights reserved.</p>
+			</div>
+		  </div>
+		</div>
+	</footer>
+	{% endblock %}
