@@ -3,12 +3,12 @@
 {% load static %}
 {% block css %}{% static 'CWcore/css/home.css' %}{% endblock %}
 	{% block nav %}
-	<nav class="pure-menu-active">
-		<ul class="pure-u-1 pure-menu-horizontal pure-menu-scrollable">
-			<li class="pure-menu-item"><h1 class="pure-menu-heading">Communication With HEARTs</h1></li>
+	<nav class="pure-menu-active pure-u-md-1">
+		<ul class="pure-u-md-1 pure-menu-horizontal pure-menu-scrollable">
+			<li class="pure-menu-item"><h1 class="pure-menu-heading">CommunicationsWe</h1></li>
 			<li class="pure-menu-item"><a href="{% url 'CWcore:home' %}" class="pure-menu-link">主页</a></li>
-			<li class="pure-menu-item"><a href="#" class="pure-menu-link">有声Blog</a></li>
-			<li class="pure-menu-item"><a href="#" class="pure-menu-link">Vlog</a></li>
+			<li class="pure-menu-item"><a href="{% url 'CWcore:voiceblog' %}" class="pure-menu-link">有声Blog</a></li>
+			<li class="pure-menu-item"><a href="{% url 'CWcore:vlog' %}" class="pure-menu-link">Vlog</a></li>
 			<li class="pure-menu-item"><a href="#" class="pure-menu-link">阅读分享</a></li>
 			<li class="pure-menu-item"><a href="#" class="pure-menu-link">交流空间</a></li>
 			<li class="pure-menu-item"><a href="{% url 'CWcore:about' %}" class="pure-menu-link">关于CommunicationsWE</a></li>
@@ -21,22 +21,48 @@
 		</ul>
 	</nav>
 	{% endblock %}
-	{% block 主体 %}
-	<div class="pure-menu custom-restricted-width pure-u-1-5  side-menu">
-		<span class="pure-menu-heading">Yahoo Sites</span>
-			<ul class="pure-menu-list pure-g-1-5">
-				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Flickr</a></li>
+  
+	{% block sidebar %}
+	<div class="side-menu custom-restricted-width pure-u-1">
+		<span class="pure-menu-heading">上传自己的生活</span>
+			<ul class="pure-menu-list pure-g-1-2">
+					<li class="pure-menu-item">
+						<form class="pure-form" method="POST" action="{% url 'CWcore:uploadimg' %}" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="pure-u-1-4">
+                  <a href="" class="file pure-button">选择文件<input class="change" type="file" name="img"></a>
+              <br>
+                <button class="pure-button pure-button-primary" type="submit" method="POST">图片上传</button>
+              </div>
+						</form>
+					</li>
 				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Messenger</a></li>
 				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Sports</a></li>
 				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Finance</a></li>
+
 				<li class="pure-menu-heading">More Sites</li>
 				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Games</a></li>
 				<li class="pure-menu-item"><a href="#" class="pure-menu-link">News</a></li>
 				<li class="pure-menu-item"><a href="#" class="pure-menu-link">OMG!</a></li>
 			</ul>
 	</div>
-	<main background="static/images/home_bg.jpg" class="pure-u-1-2 text_center">
-		<div class="contents pure-menu-list">
+	{% endblock %}
+
+
+
+
+  {% block 主体 %}
+    {% if warning %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>{{ warning }}</strong>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endif %}
+	<main class="pure-u-1-2 text_center">
+    <div class="contents pure-menu-list">
+
 			{% for every_article in article %}
 				<table class="pure-table">
 					<h3>{{ every_article.title }}</h3>
@@ -50,7 +76,7 @@
 		<div>
 		  <div class="row">
 			<div class="col-12">
-			  <p>Copyright © Heroku. All rights reserved.</p>
+			  <p>Copyright © CWker. All rights reserved.</p>
 			</div>
 		  </div>
 		</div>

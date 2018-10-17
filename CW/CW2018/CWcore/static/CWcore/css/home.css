@@ -5,8 +5,10 @@ div.custom-restricted-width {
     width: 10rem;
 }
 .side-menu {
-	margin-left: 3rem;
+    margin-left: 3rem;
+    background:#fff;
 }
+
 
 .contents {
 	margin-left: 20rem;
@@ -15,4 +17,31 @@ div.custom-restricted-width {
 .text-center {
     margin-left: 60rem;
     font-size: small;
+}
+
+.upload{ 
+    padding: 4px 10px; 
+    height: 20px; 
+    line-height: 20px; 
+    position: relative; 
+} 
+
+.change{ 
+    position: absolute;    
+    font-size: 20px;    
+    right: 0;    
+    top: 0;    
+    opacity: 0;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+}
+
+.file {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    text-decoration: none;
+    background:#ccc; /* 一些不支持背景渐变的浏览器 */  
+    background:-moz-linear-gradient(top, #fff, #ccc);  
+    background:-webkit-gradient(linear, 0 0, 0 bottom, from(#fff), to(#ccc));  
+    background:-o-linear-gradient(top, #fff, #ccc); 
 }

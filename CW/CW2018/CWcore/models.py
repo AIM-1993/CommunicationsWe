@@ -21,3 +21,11 @@ class Article(models.Model):
 
 	def __str__(self):
 		return self.title
+
+
+
+class Img(models.Model):
+	name=models.CharField(max_length=30)
+	img=models.ImageField(upload_to='photo',null=False,blank=True)
+	def __unicode__(self):
+		return self.name
