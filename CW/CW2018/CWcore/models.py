@@ -24,8 +24,8 @@ class Article(models.Model):
 
 
 
-class Img(models.Model):
+class UploadFile(models.Model):
 	name=models.CharField(max_length=30)
-	img=models.ImageField(upload_to='photo',null=False,blank=True)
+	upload_items = models.FileField(upload_to='file',null=False,blank=True)
 	def __unicode__(self):
 		return self.name

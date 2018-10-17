@@ -5,7 +5,7 @@ import os
 # from django.core.cache import cache
 # from django.views.decorators.cache import cache_page
 # from django_redis import get_redis_connection
-from .models import Author, Article, Img
+from .models import Author, Article, UploadFile
 
 
 # conn = get_redis_connection("default")
@@ -38,11 +38,11 @@ def about(request):
 def uploadimg(request):
     if request.method == 'POST':
         if request.FILES:
-            new_img = Img(img=request.FILES.get('img'), name = request.FILES.get('img').name)
-            new_img.save()
-            return render(request, "CWcore/home.html")
+            new_items = UploadFile(upload_items = request.FILES.get('items'), name = request.FILES.get('items').name)
+            new_items.save()
+            return render(request, "CWcore/home.html", {'warning': "上传文件成功"})
         else:
-            return HttpResponseRedirect('/home/', {'warning': "还未选择需要上传的文件！"})
+            return HttpResponseRedirect('/warning/', {'warning': "还未选择需要上传的文件！"})
     
     else:
         return render(request, 'CWcore/home.html', {'warning': "还未选择需要上传的文件！"})

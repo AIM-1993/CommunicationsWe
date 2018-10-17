@@ -24,26 +24,21 @@
   
 	{% block sidebar %}
 	<div class="side-menu custom-restricted-width pure-u-1">
-		<span class="pure-menu-heading">上传自己的生活</span>
+		<span class="pure-menu-heading">上传你自己的生活</span>
 			<ul class="pure-menu-list pure-g-1-2">
 					<li class="pure-menu-item">
 						<form class="pure-form" method="POST" action="{% url 'CWcore:uploadimg' %}" enctype="multipart/form-data">
               {% csrf_token %}
               <div class="pure-u-1-4">
-                  <a href="" class="file pure-button">选择文件<input class="change" type="file" name="img"></a>
+                  <a href="" class="file pure-button">选择文件<input class="change" type="file" name="items"></a>
               <br>
-                <button class="pure-button pure-button-primary" type="submit" method="POST">图片上传</button>
+                <button class="pure-button pure-button-primary" type="submit" method="POST">上传</button>
               </div>
 						</form>
 					</li>
 				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Messenger</a></li>
 				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Sports</a></li>
 				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Finance</a></li>
-
-				<li class="pure-menu-heading">More Sites</li>
-				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Games</a></li>
-				<li class="pure-menu-item"><a href="#" class="pure-menu-link">News</a></li>
-				<li class="pure-menu-item"><a href="#" class="pure-menu-link">OMG!</a></li>
 			</ul>
 	</div>
 	{% endblock %}
@@ -52,17 +47,13 @@
 
 
   {% block 主体 %}
-    {% if warning %}
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-      <strong>{{ warning }}</strong>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    {% endif %}
 	<main class="pure-u-1-2 text_center">
     <div class="contents pure-menu-list">
-
+			{% if warning %}
+			<div>
+				<strong>{{ warning }}</strong>
+			</div>
+			{% endif %}
 			{% for every_article in article %}
 				<table class="pure-table">
 					<h3>{{ every_article.title }}</h3>
@@ -72,6 +63,9 @@
 			{% endfor %}
 		</div>
 	</main>
+
+	{% endblock %}
+	{% block footer %}
 	<footer class="text-center">
 		<div>
 		  <div class="row">
