@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-{% extends "CWcore/base.html" %}
+{% extends "CWblog/base.html" %}
 {% load static %}
-{% block css %}{% static 'CWcore/css/home.css' %}{% endblock %}
+{% block css %}{% static 'CWblog/css/home.css' %}{% endblock %}
 
 	{% block 主体 %}
 	<div class="pure-g">
 			<nav class="pure-u-1 pure-u-md-1">
 					<ul class="pure-menu-horizontal pure-menu-scrollable">
 						<li class="pure-menu-item"><h1 class="pure-menu-heading">CommunicationsWe</h1></li>
-						<li class="pure-menu-item"><a href="{% url 'CWcore:home' %}" class="pure-menu-link">主页</a></li>
-						<li class="pure-menu-item"><a href="{% url 'CWcore:voiceblog' %}" class="pure-menu-link">有声Blog</a></li>
-						<li class="pure-menu-item"><a href="{% url 'CWcore:vlog' %}" class="pure-menu-link">Vlog</a></li>
+						<li class="pure-menu-item"><a href="{% url 'CWblog:home' %}" class="pure-menu-link">主页</a></li>
+						<li class="pure-menu-item"><a href="{% url 'CWblog:voiceblog' %}" class="pure-menu-link">有声Blog</a></li>
+						<li class="pure-menu-item"><a href="{% url 'CWblog:vlog' %}" class="pure-menu-link">Vlog</a></li>
 						<li class="pure-menu-item"><a href="#" class="pure-menu-link">阅读分享</a></li>
 						<li class="pure-menu-item"><a href="#" class="pure-menu-link">交流空间</a></li>
-						<li class="pure-menu-item"><a href="{% url 'CWcore:about' %}" class="pure-menu-link">关于CommunicationsWE</a></li>
+						<li class="pure-menu-item"><a href="{% url 'CWblog:about' %}" class="pure-menu-link">关于CommunicationsWE</a></li>
 						<li class="pure-menu-item">
 							<form class="pure-form">
 								<input type="text" class="pure-input-rounded pure-u-1">
@@ -25,16 +25,6 @@
 	<div class="pure-u-1 pure-u-md-1-3 side-menu custom-restricted-width">
 		<span class="pure-menu-heading">上传你自己的生活</span>
 			<ul class="pure-menu-list pure-g-1-2">
-					<li class="pure-menu-item">
-						<form class="pure-form" method="POST" action="{% url 'CWcore:uploadimg' %}" enctype="multipart/form-data">
-							{% csrf_token %}
-							<div class="pure-u-1-4">
-									<a href="" class="file pure-button">选择文件<input class="change" type="file" name="items"></a>
-							<br>
-								<button class="pure-button pure-button-primary" type="submit" method="POST">上传</button>
-							</div>
-						</form>
-					</li>
 				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Messenger</a></li>
 				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Sports</a></li>
 				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Finance</a></li>

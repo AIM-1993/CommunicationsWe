@@ -21,11 +21,3 @@ class Article(models.Model):
 
 	def __str__(self):
 		return self.title
-
-
-
-class UploadFile(models.Model):
-	name=models.CharField(max_length=30)
-	upload_items = models.FileField(upload_to='file',null=False,blank=True)
-	def __unicode__(self):
-		return self.name

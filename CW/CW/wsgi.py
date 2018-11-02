@@ -1,5 +1,5 @@
 """
-WSGI config for CW2018 project.
+WSGI config for CW project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'CW2018.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'CW.settings')
 
 application = get_wsgi_application()
