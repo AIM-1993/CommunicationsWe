@@ -3,7 +3,7 @@
 {% load static %}
 {% block css %}{% static 'CWblog/css/home.css' %}{% endblock %}
 
-	{% block 主体 %}
+	{% block main %}
 	<div class="pure-g">
 			<nav class="pure-u-1 pure-u-md-1">
 					<ul class="pure-menu-horizontal pure-menu-scrollable">
@@ -11,19 +11,11 @@
 						<li class="pure-menu-item"><a href="{% url 'CWblog:home' %}" class="pure-menu-link">主页</a></li>
 						<li class="pure-menu-item"><a href="{% url 'CWblog:voiceblog' %}" class="pure-menu-link">有声Blog</a></li>
 						<li class="pure-menu-item"><a href="{% url 'CWblog:vlog' %}" class="pure-menu-link">Vlog</a></li>
-						<li class="pure-menu-item"><a href="#" class="pure-menu-link">阅读分享</a></li>
-						<li class="pure-menu-item"><a href="#" class="pure-menu-link">交流空间</a></li>
 						<li class="pure-menu-item"><a href="{% url 'CWblog:about' %}" class="pure-menu-link">关于CommunicationsWE</a></li>
-						<li class="pure-menu-item">
-							<form class="pure-form">
-								<input type="text" class="pure-input-rounded pure-u-1">
-								<button type="submit" class="pure-button">搜索</button>
-							</form>
-						</li>
 					</ul>
 				</nav>
 	<div class="pure-u-1 pure-u-md-1-3 side-menu custom-restricted-width">
-		<span class="pure-menu-heading">上传你自己的生活</span>
+		<span class="pure-menu-heading">记录点滴的生活</span>
 			<ul class="pure-menu-list pure-g-1-2">
 				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Messenger</a></li>
 				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Sports</a></li>
