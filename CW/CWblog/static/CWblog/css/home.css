@@ -15,16 +15,9 @@ div.custom-restricted-width {
 }
 
 .text-center {
-    margin-left: 60rem;
+    margin-left: 50rem;
     font-size: small;
 }
-
-.upload{ 
-    padding: 4px 10px; 
-    height: 20px; 
-    line-height: 20px; 
-    position: relative; 
-} 
 
 .change{ 
     position: absolute;    
@@ -33,15 +26,4 @@ div.custom-restricted-width {
     top: 0;    
     opacity: 0;
     filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
-}
-
-.file {
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    text-decoration: none;
-    background:#ccc; /* 一些不支持背景渐变的浏览器 */  
-    background:-moz-linear-gradient(top, #fff, #ccc);  
-    background:-webkit-gradient(linear, 0 0, 0 bottom, from(#fff), to(#ccc));  
-    background:-o-linear-gradient(top, #fff, #ccc); 
 }
