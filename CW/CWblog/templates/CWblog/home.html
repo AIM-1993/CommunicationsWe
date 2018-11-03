@@ -23,9 +23,9 @@
     <div class="pure-menu custom-restricted-width">
 			<ul class="pure-menu-list pure-g-1-2">
 				<hr class="hrtest">
-				<li class="pure-menu-item"><a href="#" class="pure-menu-link">上传日记</a></li>
+				<li class="pure-menu-item"><a href="{% url 'CWblog:write_article' %}" class="pure-menu-link">上传日记</a></li>
 				<li class="pure-menu-item"><a href="#" class="pure-menu-link">书籍推荐</a></li>
-				<li class="pure-menu-item"><a href="#" class="pure-menu-link">关于</a></li>
+				<li class="pure-menu-item"><a href="{% url 'CWblog:about' %}" class="pure-menu-link">关于</a></li>
       </ul>
 			<hr class="hrtest">
     </div>
@@ -42,9 +42,9 @@
 				{% endif %}
 				{% for every_article in article %}
 					<table class="pure-table">
-						<h3>{{ every_article.title }}</h3>
-						<h6>作者：{{ every_article.author }}</h6>
-						<div class="article">{{ every_article.contents | safe }}</div>
+						<h3 class="title-font">{{ every_article.title }}</h3>
+						<h6 class="title-font">作者：{{ every_article.author }}</h6>
+						<div class="article-font">{{ every_article.contents | safe }}</div>
 					</table>
 				{% endfor %}
 			</div>
@@ -61,7 +61,7 @@
 		<footer class="pure-u-1 text-center">
 			<div>
 				<div class="row">
-					<p>Copyright © Powered By PureCSS & FontAwersome.</p>
+					<p>Copyright © Powered By PureCSS, Django & FontAwesome.</p>
 				</div>
 			</div>
 		</footer>

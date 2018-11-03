@@ -19,17 +19,16 @@ def home(request):
 
 # @cache_page(60)
 def blog(request):
-    if request.method == "GET":
         return render(request, "CWblog/blog.html")
-
 
 # @cache_page(60)
 def gallery(request):
-    if request.method == "GET":
         return render(request, "CWblog/gallery.html")
-
 
 # @cache_page(60)
 def about(request):
-        if request.method == "GET":
-            return render(request, "CWblog/about.html")
+        return render(request, "CWblog/about.html")
+
+# @cache_page(60)
+def write_article(request):
+    return render(request, "CWblog/write_article.html")

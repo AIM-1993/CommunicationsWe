@@ -1,10 +1,5 @@
 /* CSS Document */
-.article {
-  font-family: Yapi SC;
-  font: 95%;
-  font-size: 16px;
-  color: #777777;
-}
+
 
 
 
@@ -45,4 +40,19 @@ div.custom-restricted-width {
   border-left:none;
   border-right:none;
   border-bottom:none;
+}
+
+
+.article-font {
+  font-family: Yapi SC;
+  font: 95%;
+  font-size: 16px;
+  color: #777777;
+}
+
+
+
+.title-font {
+  font-family: HYLeMiaoTi;
+  color: rgb(99, 101, 102)
 }
