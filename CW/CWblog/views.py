@@ -18,23 +18,18 @@ def home(request):
         return render(request, "CWblog/home.html", content)
 
 # @cache_page(60)
-def voiceblog(request):
+def blog(request):
     if request.method == "GET":
-        return render(request, "CWblog/voiceblog.html")
+        return render(request, "CWblog/blog.html")
 
 
 # @cache_page(60)
-def vlog(request):
+def gallery(request):
     if request.method == "GET":
-        return render(request, "CWblog/vlog.html")
+        return render(request, "CWblog/gallery.html")
 
 
 # @cache_page(60)
 def about(request):
         if request.method == "GET":
             return render(request, "CWblog/about.html")
-
-
-
-
-			

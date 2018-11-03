@@ -5,7 +5,7 @@ app_name = "CWblog"
 
 urlpatterns = [
     path('', views.home, name="home"),
-    path('voice/', views.voiceblog, name="voiceblog"),
-    path('vlog/', views.vlog, name="vlog"),
+    path('blog/', views.blog, name="blog"),
+    path('gallery/', views.gallery, name="gallery"),
     path('about/', views.about, name="about"),
 ]
