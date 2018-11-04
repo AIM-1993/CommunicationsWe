@@ -21,3 +21,13 @@ class Article(models.Model):
 
 	def __str__(self):
 		return self.title
+
+
+class Gallery(models.Model):
+	objects = models.Manager()
+	title = models.CharField(max_length=50)
+	pub_date = models.DateTimeField("date_published")
+	image = models.ImageField(upload_to='media/%Y/%m', verbose_name="图片名称")
+
+	def __str__(self):
+		return self.title

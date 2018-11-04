@@ -1,0 +1,59 @@
+/* CSS Document */
+div.custom-restricted-width {
+    /* To limit the menu width to the content of the menu: */
+    /* Or set the width explicitly: */
+    width: 10rem;
+}
+
+.side-menu {
+    margin-left: 2rem;
+    background:#fff;
+}
+
+
+.contents {
+	margin-left: 20rem;
+}
+
+.text-center {
+    font-size: small;
+    text-align: center;
+}
+
+.change{
+    position: absolute;
+    font-size: 20px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+}
+
+.hrtest{
+  height:20px;
+  width: auto;
+  border-left:  dashed;
+  opacity: 0.8;
+  border-left:none;
+  border-right:none;
+  border-bottom:none;
+}
+
+
+.article-font {
+  font-family: Yapi SC;
+  font: 95%;
+  font-size: 16px;
+  color: #777777;
+}
+
+
+
+.title-font {
+  font-family: HYLeMiaoTi;
+  color: rgb(99, 101, 102)
+}
+
+.box {
+    padding: 15px 7px 0 7px;
+}

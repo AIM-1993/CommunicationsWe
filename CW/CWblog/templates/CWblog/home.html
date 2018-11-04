@@ -3,68 +3,62 @@
 {% load static %}
 {% block css %}{% static 'CWblog/css/home.css' %}{% endblock %}
 
-	{% block nav %}
-	<div class="pure-g">
-    <nav class="pure-u-1 pure-u-md-1">
-        <ul class="pure-menu-horizontal pure-menu-scrollable">
-          <li class="pure-menu-item"><h1 class="pure-menu-heading">CommunicationsWe</h1></li>
-          <li class="pure-menu-item"><a href="{% url 'CWblog:home' %}" class="pure-menu-link">主页</a></li>
-          <li class="pure-menu-item"><a href="{% url 'CWblog:blog' %}" class="pure-menu-link">Blog</a></li>
-          <li class="pure-menu-item"><a href="{% url 'CWblog:gallery' %}" class="pure-menu-link">Gallery</a></li>
-          <li class="pure-menu-item"><a href="{% url 'CWblog:about' %}" class="pure-menu-link">关于CommunicationsWE</a></li>
-        </ul>
-        <hr class="hrtest">
-    </nav>
-  </div>
-	{% endblock %}
-
-  {% block side_menu %}
-	<div class="pure-u-1-5 pure-u-md-1-3 side-menu custom-restricted-width">
-    <span class="pure-menu-heading">记录点滴的生活</span>
-    <div class="pure-menu custom-restricted-width">
-			<ul class="pure-menu-list pure-g-1-2">
-				<hr class="hrtest">
-				<li class="pure-menu-item"><a href="{% url 'CWblog:write_article' %}" class="pure-menu-link">上传日记</a></li>
-				<li class="pure-menu-item"><a href="#" class="pure-menu-link">书籍推荐</a></li>
-				<li class="pure-menu-item"><a href="{% url 'CWblog:about' %}" class="pure-menu-link">关于</a></li>
+{% block nav %}
+<div class="pure-g">
+  <nav class="pure-u-1 pure-u-md-1">
+      <ul class="pure-menu-horizontal pure-menu-scrollable">
+        <li class="pure-menu-item"><h1 class="pure-menu-heading">CommunicationsWe</h1></li>
+        <li class="pure-menu-item"><a href="{% url 'CWblog:home' %}" class="pure-menu-link">主页</a></li>
+        <li class="pure-menu-item"><a href="{% url 'CWblog:blog' %}" class="pure-menu-link">Blog</a></li>
+        <li class="pure-menu-item"><a href="{% url 'CWblog:gallery' %}" class="pure-menu-link">Gallery</a></li>
+        <li class="pure-menu-item"><a href="{% url 'CWblog:about' %}" class="pure-menu-link">关于CommunicationsWE</a></li>
       </ul>
-			<hr class="hrtest">
-    </div>
+      <hr class="hrtest">
+  </nav>
+</div>
+{% endblock %}
+
+{% block side_menu %}
+<div class="pure-u-1-5 pure-u-md-1-5 side-menu custom-restricted-width">
+  <span class="pure-menu-heading">记录点滴的生活</span>
+  <div class="pure-menu custom-restricted-width">
+    <ul class="pure-menu-list pure-g-1-2">
+      <hr class="hrtest">
+      <li class="pure-menu-item"><a href="{% url 'CWblog:write_article' %}" class="pure-menu-link">上传日记</a></li>
+      <li class="pure-menu-item"><a href="#" class="pure-menu-link">书籍推荐</a></li>
+      <li class="pure-menu-item"><a href="{% url 'CWblog:about' %}" class="pure-menu-link">关于</a></li>
+    </ul>
+    <hr class="hrtest">
   </div>
-	{% endblock %}
+</div>
+{% endblock %}
 
-	{% block content %}
-		<main class="pure-u-1-3 pure-u-md-1-2 text_center">
-			<div class="contents pure-u-md-2-5">
-				{% if warning %}
-				<div>
-					<strong>{{ warning }}</strong>
-				</div>
-				{% endif %}
-				{% for every_article in article %}
-					<table class="pure-table">
-						<h3 class="title-font">{{ every_article.title }}</h3>
-						<h6 class="title-font">作者：{{ every_article.author }}</h6>
-						<div class="article-font">{{ every_article.contents | safe }}</div>
-					</table>
-				{% endfor %}
-			</div>
-    </main>
-	{% endblock %}
+{% block content %}
+  <main class="pure-u-1-3 pure-u-md-1-2 text_center">
+    <div class="contents pure-u-md-2-5">
+      {% for every_article in article %}
+        <table class="pure-table">
+          <h3 class="title-font">{{ every_article.title }}</h3>
+          <h6 class="title-font">作者：{{ every_article.author }}</h6>
+          <div class="article-font">{{ every_article.contents | safe }}</div>
+        </table>
+      {% endfor %}
+    </div>
+  </main>
+{% endblock %}
 
-	{% block side_gallery %}
-    <div class="pure-u-1-3 pure-u-md-2-2 box">
-      <img class="pure-u-2-2 pure-img" src="{% static 'CWblog/images/beach.jpg' %}"/>
-   </div>
-	{% endblock %}
+{% block side_gallery %}
+  <div class="pure-u-1-3 pure-u-md-2-2">
+    <img class="pure-u-2-2 pure-img box" src="{% static 'CWblog/images/beach.jpg' %}"/>
+  </div>
+{% endblock %}
 
-	{% block footer %}
-		<footer class="pure-u-1 text-center">
-			<div>
-				<div class="row">
-					<p>Copyright © Powered By PureCSS, Django & FontAwesome.</p>
-				</div>
-			</div>
-		</footer>
-  {% endblock %}
-
+{% block footer %}
+  <footer class="pure-u-1 text-center">
+    <div>
+      <div class="row">
+        <p>Copyright © Powered By PureCSS, Django & FontAwesome.</p>
+      </div>
+    </div>
+  </footer>
+{% endblock %}

@@ -1,0 +1,15 @@
+.main {
+    -webkit-column-width: 202px;
+    -moz-column-width: 202px;
+    column-width: 202px;
+}
+
+.pic {
+    border: 1px soild #dddddd;
+
+}
+
+.pic img {
+    width: 165px;
+    padding: 10px;
+}
