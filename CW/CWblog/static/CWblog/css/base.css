@@ -51,7 +51,8 @@ div.custom-restricted-width {
 
 .title-font {
   font-family: HYLeMiaoTi;
-  color: rgb(99, 101, 102)
+  color: rgb(99, 101, 102);
+  text-decoration:none;
 }
 
 .box {
