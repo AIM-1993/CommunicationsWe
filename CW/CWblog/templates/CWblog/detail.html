@@ -1,0 +1,18 @@
+<!doctype html>
+{% extends "CWblog/home.html" %}
+{% load static %}
+
+
+{% block content %}
+  <main class="pure-u-1-3 pure-u-md-1-2 text_center">
+    <div class="contents pure-u-md-2-5 pure-paginator">
+      {% if article %}
+        <table class="pure-table">
+          <h3><a class="title-font" href="">{{ article.title }}</a></h3>
+          <h6 class="title-font">作者：{{ article.author }}</h6>
+          <div class="article-font">{{ article.contents|safe }}</div>
+        </table>
+      {% endif %}
+    </div>
+  </main>
+{% endblock %}

@@ -1,5 +1,5 @@
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import View
 # from django.core.cache import cache
 # from django.views.decorators.cache import cache_page
@@ -19,6 +19,7 @@ class HomeView(View):
             content = {"article" : article, "contacts": contacts}
             return render(request, "CWblog/home.html", locals())
 
+
 # @cache_page(60)
 class BlogView(View):
     def get(self, request):
@@ -29,6 +30,15 @@ class BlogView(View):
         if request.method == "GET":
             content = {"article" : article, "contacts": contacts}
             return render(request, "CWblog/blog.html", locals())
+
+
+class DetailView(View):
+    def get(self, request, pk):
+        article = Article.objects.get(pk=pk)
+        return render(request, "CWblog/detail.html", locals())
+
+
+
 
 # @cache_page(60)
 class GalleryView(View):
