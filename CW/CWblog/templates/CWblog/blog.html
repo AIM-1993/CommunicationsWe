@@ -20,9 +20,7 @@
               </a>
             </li>
           {% endif %}
-
           <li class="page-item"><a class="page-link" href="?page={{ contacts.number }}">{{ contacts.number }}</a></li>
-          
           {% if contacts.has_next %}
             <li class="page-item"><span class="sr-only">Next</span>
               <a class="page-link" href="?page={{ contacts.next_page_number }}" aria-label="Next">

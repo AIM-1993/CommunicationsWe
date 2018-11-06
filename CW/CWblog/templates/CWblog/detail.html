@@ -1,11 +1,11 @@
 <!doctype html>
-{% extends "CWblog/home.html" %}
+{% extends "CWblog/blog.html" %}
 {% load static %}
 
 
 {% block content %}
-  <main class="pure-u-1-3 pure-u-md-1-2 text_center">
-    <div class="contents pure-u-md-2-5 pure-paginator">
+  <main class="pure-u-1 pure-u-md-1-2 text_center">
+    <div class="contents pure-u-md-1-1 pure-paginator">
       {% if article %}
         <table class="pure-table">
           <h3><a class="title-font" href="">{{ article.title }}</a></h3>

@@ -12,6 +12,11 @@
         <li class="pure-menu-item"><a href="{% url 'CWblog:blog' %}" class="pure-menu-link">Blog</a></li>
         <li class="pure-menu-item"><a href="{% url 'CWblog:gallery' %}" class="pure-menu-link">Gallery</a></li>
         <li class="pure-menu-item"><a href="{% url 'CWblog:about' %}" class="pure-menu-link">关于CommunicationsWE</a></li>
+        <form action="/your-name/" method="post">
+          <label for="your_name">Your name: </label>
+          <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+          <input type="submit" value="OK">
+        </form>
       </ul>
       <hr class="hrtest">
   </nav>
@@ -37,11 +42,13 @@
   <main class="pure-u-1-3 pure-u-md-1-2 text_center">
     <div class="contents pure-u-md-2-5 pure-paginator">
       <nav aria-label="Page navigation example">
+        <h2 class="title-font">推荐博文</h2>
         {% for contact in contacts %}
         <table class="pure-table">
-            <h3><a class="title-font" href="{% url 'CWblog:blog' %}">{{ contact.title }}</a></h3>
+            <h3><a class="title-font" href="{% url 'CWblog:detail' pk=contact.pk %}">{{ contact.title }}</a></h3>
+            <i class="fas fa-mountain"></i>
             <h6 class="title-font">作者：{{ contact.author }}</h6>
-            <div class="article-font">{{ contact.contents | safe}}</div>
+            <div class="article-font">{{ contact.contents | striptags | truncatechars:100}}</div>
           </table>
         {% endfor %}
       </nav>
