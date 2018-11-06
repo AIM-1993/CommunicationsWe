@@ -1,4 +1,5 @@
 /* CSS Document */
+
 div.custom-restricted-width {
     /* To limit the menu width to the content of the menu: */
     /* Or set the width explicitly: */
@@ -12,12 +13,14 @@ div.custom-restricted-width {
 
 
 .contents {
-	margin-left: 20rem;
+    margin-left: 20rem;
+    
 }
 
-.text-center {
+.footer {
     font-size: small;
     text-align: center;
+    flex: 0 0 auto;
 }
 
 .change{

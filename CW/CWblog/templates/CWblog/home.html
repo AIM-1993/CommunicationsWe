@@ -4,46 +4,46 @@
 {% block css %}{% static 'CWblog/css/home.css' %}{% endblock %}
 
 {% block nav %}
-<div class="pure-g">
-  <nav class="pure-u-1 pure-u-md-1">
-      <ul class="pure-menu-horizontal pure-menu-scrollable">
-        <li class="pure-menu-item"><h1 class="pure-menu-heading">CommunicationsWe</h1></li>
-        <li class="pure-menu-item"><a href="{% url 'CWblog:home' %}" class="pure-menu-link">主页</a></li>
-        <li class="pure-menu-item"><a href="{% url 'CWblog:blog' %}" class="pure-menu-link">Blog</a></li>
-        <li class="pure-menu-item"><a href="{% url 'CWblog:gallery' %}" class="pure-menu-link">Gallery</a></li>
-        <li class="pure-menu-item"><a href="{% url 'CWblog:about' %}" class="pure-menu-link">关于CommunicationsWE</a></li>
-        <li class="pure-menu-item">
-        </li>
-      </ul>
-      <hr class="hrtest">
-  </nav>
-</div>
+  <div class="pure-g">
+    <nav class="pure-u-1 pure-u-md-1">
+        <ul class="pure-menu-horizontal pure-menu-scrollable">
+          <li class="pure-menu-item"><h1 class="pure-menu-heading"><a class="title-font" href="{% url 'CWblog:home' %}">CommunicationsWe</a></h1></li>
+          <li class="pure-menu-item"><a href="{% url 'CWblog:home' %}" class="pure-menu-link">主页</a></li>
+          <li class="pure-menu-item"><a href="{% url 'CWblog:blog' %}" class="pure-menu-link">Blog</a></li>
+          <li class="pure-menu-item"><a href="{% url 'CWblog:gallery' %}" class="pure-menu-link">Gallery</a></li>
+          <li class="pure-menu-item"><a href="{% url 'CWblog:about' %}" class="pure-menu-link">关于CommunicationsWE</a></li>
+          <li class="pure-menu-item">
+          </li>
+        </ul>
+        <hr class="hrtest">
+    </nav>
+  </div>
 {% endblock %}
 
 {% block side_menu %}
-<div class="pure-u-1-5 pure-u-md-1-5 side-menu custom-restricted-width">
-  <span class="pure-menu-heading">记录你自己的点滴生活</span>
-  <div class="pure-menu custom-restricted-width">
-    <ul class="pure-menu-list pure-g-1-2">
+  <div class="pure-u-1-5 pure-u-md-1-5 side-menu custom-restricted-width">
+    <span class="pure-menu-heading">记录你自己的点滴生活</span>
+    <div class="pure-menu custom-restricted-width">
+      <ul class="pure-menu-list pure-g-1-2">
+        <hr class="hrtest">
+        <li class="pure-menu-item"><a href="{% url 'CWblog:write_article' %}" class="pure-menu-link">上传日记</a></li>
+        <li class="pure-menu-item"><a href="#" class="pure-menu-link">书籍推荐</a></li>
+        <li class="pure-menu-item"><a href="{% url 'CWblog:about' %}" class="pure-menu-link">关于</a></li>
+      </ul>
       <hr class="hrtest">
-      <li class="pure-menu-item"><a href="{% url 'CWblog:write_article' %}" class="pure-menu-link">上传日记</a></li>
-      <li class="pure-menu-item"><a href="#" class="pure-menu-link">书籍推荐</a></li>
-      <li class="pure-menu-item"><a href="{% url 'CWblog:about' %}" class="pure-menu-link">关于</a></li>
-    </ul>
-    <hr class="hrtest">
+    </div>
   </div>
-</div>
 {% endblock %}
 
 {% block content %}
-  <main class="pure-u-1-3 pure-u-md-1-2 text_center">
-    <div class="contents pure-u-md-2-5 pure-paginator">
+  <main class="pure-u-1-3 pure-u-md-1-2 content">
+    <div class="contents pure-u-md-2-5">
       <nav aria-label="Page navigation example">
         </i><h2 class="title-font"><i class="fas fa-cannabis"></i>  推荐博文  </h2>
         {% for contact in contacts %}
         <table class="pure-table">
             <h3><a class="title-font" href="{% url 'CWblog:detail' pk=contact.pk %}"><i class="far fa-newspaper"></i>{{ contact.title }}</a></h3>
-            <h6 class="title-font"><i class="far fa-edit"></i>作者：{{ contact.author }}</h6>
+            <h6 class="title-font"><i class="far fa-edit"></i> 作者：{{ contact.author }}</h6>
             <div class="article-font">{{ contact.contents | striptags | truncatechars:500 | safe}}</div>
           </table>
         {% endfor %}
@@ -59,7 +59,7 @@
 {% endblock %}
 
 {% block footer %}
-  <footer class="pure-u-1 text-center">
+  <footer class="pure-u-1 footer">
     <div>
       <div class="row">
         <p>Copyright © Powered By PureCSS, Django & FontAwesome.</p>
