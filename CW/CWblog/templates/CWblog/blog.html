@@ -6,8 +6,8 @@
       <nav aria-label="Page navigation example">
         {% for contact in contacts %}
         <table class="pure-table">
-            <h3><a class="title-font" href="{% url 'CWblog:detail' pk=contact.pk %}">{{ contact.title }}</a></h3>
-            <h6 class="title-font">作者：{{ contact.author }}</h6>
+            <h3><a class="title-font" href="{% url 'CWblog:detail' pk=contact.pk %}"><i class="far fa-newspaper"></i>{{ contact.title }}</a></h3>
+            <h6 class="title-font"><i class="far fa-edit"></i>作者：{{ contact.author }}</h6>
             <div class="article-font">{{ contact.contents | striptags | truncatechars:120 }}</div>
           </table>
         {% endfor %}
