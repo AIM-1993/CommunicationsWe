@@ -31,7 +31,7 @@ div.custom-restricted-width {
     bottom:0px;
     left:0;
     position: absolute;
-    height: 20px;
+    height: 30px;
 }
 
 .change{
@@ -55,20 +55,41 @@ div.custom-restricted-width {
 
 
 .article-font {
-  font-family: Yapi SC;
-  font: 95%;
-  font-size: 16px;
+  text-decoration: navajowhite;
+  font-family: FZShuTi;
+  font: 100%;
+  font-size: 18px;
   color: #777777;
 }
 
 
 
 .title-font {
-  font-family: HYLeMiaoTi;
+  font-family: FZShuTi;
   color: rgb(99, 101, 102);
-  text-decoration:none;
+  text-decoration: none;
 }
+
+
+
+
 
 .box {
     padding: 15px 7px 0 7px;
+}
+
+.article-link {
+    font-size: 15px;
+    font-family: FZShuTi;
+    color: rgb(99, 101, 102);
+    text-decoration: none;
+}
+
+
+
+.article-link:hover {
+    z-index: 2;
+    outline: 0;
+    color: #08bb;
+    text-decoration: none;
 }

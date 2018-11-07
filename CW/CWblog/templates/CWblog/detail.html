@@ -13,16 +13,16 @@
           <div class="article-font">{{ article.contents|safe }}</div>
         </table>
         <div class="blog-more">
-            <p>上一篇：
+            <p class="article-link">上一篇：
                 {% if context.previous_article %}
-                <a href="{% url 'CWblog:detail' context.previous_article.pk %}">{{ context.previous_article.title }}</a>
+                <a class="article-link" href="{% url 'CWblog:detail' context.previous_article.pk %}">{{ context.previous_article.title }}</a>
                 {% else %}
                     没有了
                 {% endif %}
             </p>
-            <p>下一篇：
+            <p class="article-link">下一篇：
                 {% if context.next_article %}
-                    <a href="{% url 'CWblog:detail' context.next_article.pk %}">{{ context.next_article.title }}</a>
+                    <a class="article-link" href="{% url 'CWblog:detail' context.next_article.pk %}">{{ context.next_article.title }}</a>
                 {% else %}
                     没有了
                 {% endif %}

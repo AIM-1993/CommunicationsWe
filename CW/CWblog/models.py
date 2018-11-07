@@ -23,6 +23,17 @@ class Article(models.Model):
 		return self.title
 
 
+class Userupdate(models.Model):
+    objects = models.Manager()
+    contents = models.TextField()
+
+    def __str__(self):
+        return self.contents
+
+
+
+
+
 class Gallery(models.Model):
 	objects = models.Manager()
 	title = models.CharField(max_length=50)

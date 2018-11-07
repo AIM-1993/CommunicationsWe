@@ -4,9 +4,20 @@ from django.views import View
 # from django.core.cache import cache
 # from django.views.decorators.cache import cache_page
 # from django_redis import get_redis_connection
-from .models import Article, Gallery
+from .models import Article, Userupdate, Gallery
 # conn = get_redis_connection("default")
 # Create your views here.
+
+def userUpdate(request):
+
+    if request.method=="POST":
+        context = request.POST.get("contents", "")
+        value = Userupdate.objects.create(contents = context)
+        value.save()
+    return render(request, "CWblog/success.html")
+
+
+
 
 # @cache_page(60)
 class HomeView(View):
