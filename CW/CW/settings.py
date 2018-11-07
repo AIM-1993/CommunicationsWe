@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 
+
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -171,18 +174,3 @@ CKEDITOR_CONFIGS = {
 #     }
 # }
 
-if os.getcwd()=='/app':  #获取当前目录
-    import dj_database_url
-    DATABASES = {
-        'default':dj_database_url.config(default='postgres://localhost')
-    }
-
-
-#让 request.is_secure()承认X-Forearded-Proto头
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO','https')
-
-
-#ALLOWED_HOSTS = ['localhost']
-
-#静态资源配置
-# BASE_DIR = os.path.dirname(os.path.abspath(__file__))

@@ -5,3 +5,4 @@ __pycache__
 migrations
 py3.7-django-2.1.2/*
 db.sqlite3
+venv
