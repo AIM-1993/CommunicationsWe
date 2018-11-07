@@ -34,7 +34,13 @@ class BlogView(View):
 
 class DetailView(View):
     def get(self, request, pk):
+        context = {}
         article = Article.objects.get(pk=pk)
+        context = {
+            'next_article' : Article.objects.filter(pub_date__gt=article.pub_date).first(),# 取最后一条
+            'previous_article' : Article.objects.filter(pub_date__lt=article.pub_date).last(),
+            'article' : article,
+        }
         return render(request, "CWblog/detail.html", locals())
 
 

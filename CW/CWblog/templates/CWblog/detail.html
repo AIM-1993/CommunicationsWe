@@ -12,6 +12,22 @@
           <h6 class="title-font">作者：{{ article.author }}</h6>
           <div class="article-font">{{ article.contents|safe }}</div>
         </table>
+        <div class="blog-more">
+            <p>上一篇：
+                {% if context.previous_article %}
+                <a href="{% url 'CWblog:detail' context.previous_article.pk %}">{{ context.previous_article.title }}</a>
+                {% else %}
+                    没有了
+                {% endif %}
+            </p>
+            <p>下一篇：
+                {% if context.next_article %}
+                    <a href="{% url 'CWblog:detail' context.next_article.pk %}">{{ context.next_article.title }}</a>
+                {% else %}
+                    没有了
+                {% endif %}
+            </p>
+        </div>
       {% endif %}
     </div>
   </main>

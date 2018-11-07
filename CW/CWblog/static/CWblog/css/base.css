@@ -1,4 +1,11 @@
 /* CSS Document */
+#wapper{  
+    position: relative; 
+    height: auto;
+    min-height: 100% 
+} 
+
+
 
 div.custom-restricted-width {
     /* To limit the menu width to the content of the menu: */
@@ -14,13 +21,17 @@ div.custom-restricted-width {
 
 .contents {
     margin-left: 20rem;
+    padding-bottom: 100px;
     
 }
 
 .footer {
     font-size: small;
     text-align: center;
-    flex: 0 0 auto;
+    bottom:0px;
+    left:0;
+    position: absolute;
+    height: 20px;
 }
 
 .change{

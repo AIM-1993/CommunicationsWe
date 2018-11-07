@@ -42,7 +42,7 @@
         </i><h2 class="title-font"><i class="fas fa-cannabis"></i>  推荐博文  </h2>
         {% for contact in contacts %}
         <table class="pure-table">
-            <h3><a class="title-font" href="{% url 'CWblog:detail' pk=contact.pk %}"><i class="far fa-newspaper"></i>{{ contact.title }}</a></h3>
+            <h3><a class="title-font" href="{% url 'CWblog:detail' pk=contact.pk %}"><i class="far fa-newspaper"></i> {{ contact.title }}</a></h3>
             <h6 class="title-font"><i class="far fa-edit"></i> 作者：{{ contact.author }}</h6>
             <div class="article-font">{{ contact.contents | striptags | truncatechars:500 | safe}}</div>
           </table>
