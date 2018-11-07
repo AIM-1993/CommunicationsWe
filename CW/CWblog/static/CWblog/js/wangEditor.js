@@ -25,5 +25,4 @@ editor.customConfig.menus = [
     'undo',  // 撤销
     'redo'  // 重复
     ]
-    
-$text1.val(editor.txt.html());
+
