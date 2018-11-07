@@ -9,8 +9,10 @@
       <form action="/success/" method="post">
         {% csrf_token %}
         <h1 class="article-font">在这里写下日记。。。</h1>
-        <textarea id="text1" style="width:100%; height:200px;" name="contents"></textarea>
-        <input class="pure-button"  value="提交日记" type="submit">
+        <div id="div1" class="toolbar"></div>
+        <textarea id="text1" style="width:100%; height:200px;" class="text" name="contents"></textarea>
+        <input class="pure-button" value="提交日记" type="submit">
+        
       </form>
     </div>
   </main>
