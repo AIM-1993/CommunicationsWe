@@ -17,8 +17,6 @@ def userUpdate(request):
     return render(request, "CWblog/success.html")
 
 
-
-
 # @cache_page(60)
 class HomeView(View):
     def get(self, request):
@@ -55,8 +53,6 @@ class DetailView(View):
         return render(request, "CWblog/detail.html", locals())
 
 
-
-
 # @cache_page(60)
 class GalleryView(View):
     def get(self, request):
@@ -65,15 +61,18 @@ class GalleryView(View):
             content = {"imgs" : imgs}
             return render(request, "CWblog/gallery.html", content)
 
+
 # @cache_page(60)
 class AboutView(View):
     def get(self, request):
         return render(request, "CWblog/about.html")
 
+
 # @cache_page(60)
 class Write_ArticleView(View):
     def get(self, request):
         return render(request, "CWblog/write_article.html")
+
 
 # @cache_page(60)
 class BooksView(View):

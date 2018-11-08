@@ -18,14 +18,17 @@ class Article(models.Model):
 	published = models.BooleanField(default=True)
 	pub_date = models.DateTimeField("date_published")
 	contents = RichTextField()
-
+	
+	class Meta:
+		ordering = ['id']
+	
 	def __str__(self):
 		return self.title
 
 
 class Userupdate(models.Model):
     objects = models.Manager()
-    contents = models.TextField()
+    contents = models.TextField(blank=False)
 
     def __str__(self):
         return self.contents
