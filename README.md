@@ -8,4 +8,4 @@ CommunicationsWe是一个意图表达内心真实想法的项目。意图思考�
 1. 计划先构建一个CommunicationsWe的Blog网页，网页计划通过时下的媒体交流互动方式，建立项目内核。并完成网站的部署。
 2. 项目基于DjangoMTV模式进行开发，之后计划采用React + Django进行前后端分离。
 # 项目展示
-![Blog详情页实际效果图]https://github.com/AIM-1993/CommunicationsWe/blob/master/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA.png
+![Blog详情页实际效果图](https://github.com/AIM-1993/CommunicationsWe/blob/master/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA.png)

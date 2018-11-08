@@ -4,26 +4,26 @@ from ckeditor.fields import RichTextField
 
 
 class Author(models.Model):
-	objects = models.Manager()
-	author = models.CharField(max_length=30)
+    objects = models.Manager()
+    author = models.CharField(max_length=30)
 
-	def __str__(self):
-		return self.author
+    def __str__(self):
+        return self.author
 
 
 class Article(models.Model):
-	objects = models.Manager()
-	title = models.CharField(max_length=50)
-	author = models.ForeignKey(Author, on_delete=models.CASCADE)
-	published = models.BooleanField(default=True)
-	pub_date = models.DateTimeField("date_published")
-	contents = RichTextField()
-	
-	class Meta:
-		ordering = ['id']
-	
-	def __str__(self):
-		return self.title
+    objects = models.Manager()
+    title = models.CharField(max_length=50)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    published = models.BooleanField(default=True)
+    pub_date = models.DateTimeField("date_published")
+    contents = RichTextField()
+
+    class Meta:
+        ordering = ['id']
+
+    def __str__(self):
+        return self.title
 
 
 class Userupdate(models.Model):
@@ -38,10 +38,10 @@ class Userupdate(models.Model):
 
 
 class Gallery(models.Model):
-	objects = models.Manager()
-	title = models.CharField(max_length=50)
-	pub_date = models.DateTimeField("date_published")
-	image = models.ImageField(upload_to='media/%Y/%m', verbose_name="图片名称")
+    objects = models.Manager()
+    title = models.CharField(max_length=50)
+    pub_date = models.DateTimeField("date_published")
+    image = models.ImageField(upload_to='media/%Y/%m', verbose_name="图片名称")
 
-	def __str__(self):
-		return self.title
+    def __str__(self):
+        return self.title
