@@ -34,9 +34,6 @@ class Userupdate(models.Model):
         return self.contents
 
 
-
-
-
 class Gallery(models.Model):
     objects = models.Manager()
     title = models.CharField(max_length=50)

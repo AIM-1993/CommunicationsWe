@@ -1,3 +1,5 @@
+import json, random, requests
+from django.http import JsonResponse
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.shortcuts import render, get_object_or_404
 from django.views import View
@@ -19,6 +21,7 @@ def userUpdate(request):
 
 # @cache_page(60)
 class HomeView(View):
+
     def get(self, request):
         article = Article.objects.all()
         paginator = Paginator(article, 2)
@@ -31,6 +34,7 @@ class HomeView(View):
 
 # @cache_page(60)
 class BlogView(View):
+
     def get(self, request):
         article = Article.objects.all()
         paginator = Paginator(article, 2)
@@ -42,6 +46,7 @@ class BlogView(View):
 
 
 class DetailView(View):
+
     def get(self, request, pk):
         context = {}
         article = Article.objects.get(pk=pk)
@@ -55,6 +60,7 @@ class DetailView(View):
 
 # @cache_page(60)
 class GalleryView(View):
+
     def get(self, request):
         if request.method == "GET":
             imgs = Gallery.objects.all()
@@ -64,17 +70,26 @@ class GalleryView(View):
 
 # @cache_page(60)
 class AboutView(View):
+
     def get(self, request):
         return render(request, "CWblog/about.html")
 
 
 # @cache_page(60)
 class Write_ArticleView(View):
+
     def get(self, request):
         return render(request, "CWblog/write_article.html")
 
 
 # @cache_page(60)
 class BooksView(View):
+
     def get(self, request):
-        return render(request, "CWblog/books.html")
+        r = requests.get('http://api.avatardata.cn/MingRenMingYan/LookUp?key=94c4ce1a2700451b94e54f99085ba645&keyword=天才&page=1&rows=5')
+        random_num = random.randint(0, 4)
+        response_dict = r.json()
+        data = response_dict['result'][random_num]
+        famous_name = data['famous_name']
+        famous_saying = data['famous_saying']
+        return render(request, 'CWblog/books.html', locals())
