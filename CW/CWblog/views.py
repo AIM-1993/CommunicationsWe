@@ -8,7 +8,7 @@ from django.views import View
 # from django_redis import get_redis_connection
 from .models import Article, Userupdate, Gallery
 # conn = get_redis_connection("default")
-# Create your views here.
+
 
 def userUpdate(request):
 
@@ -93,3 +93,10 @@ class BooksView(View):
         famous_name = data['famous_name']
         famous_saying = data['famous_saying']
         return render(request, 'CWblog/books.html', locals())
+
+
+def get_weather(self):
+    r = requests.get("http://api.avatardata.cn/HistoryToday/LookUp?key=217e09fd9e374ac7a0aff058e37cb7d9&yue=1&ri=1&type=1&page=1&rows=5")
+    response_dict = r.json()
+    data = response_dict['result']
+    return JsonResponse(data, safe=False)
