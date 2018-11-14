@@ -95,7 +95,7 @@ class BooksView(View):
         return render(request, 'CWblog/books.html', locals())
 
 
-def get_weather(self):
+def get_history(self):
     r = requests.get("http://api.avatardata.cn/HistoryToday/LookUp?key=217e09fd9e374ac7a0aff058e37cb7d9&yue=1&ri=1&type=1&page=1&rows=5")
     response_dict = r.json()
     data = response_dict['result']

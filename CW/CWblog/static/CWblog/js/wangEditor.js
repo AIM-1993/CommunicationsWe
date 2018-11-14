@@ -3,7 +3,7 @@ var editor1 = new E('#div1', '#text1')  // 两个参数也可以传入 elem 对�
 
 editor1.create();
 
-editor.customConfig.menus = [
+editor1.customConfig.menus = [
     'head',  // 标题
     'bold',  // 粗体
     'fontSize',  // 字号
